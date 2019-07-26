@@ -5,6 +5,7 @@ library(shinydashboard)
 library(shinyBS)
 library(shinyWidgets)
 library(shinycssloaders)
+library(dplyr)
 
 ui <- dashboardPage(
   
