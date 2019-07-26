@@ -151,6 +151,8 @@ loop.seq <- function(start, interval, sampleSize){
   return(sample)
 }
 
+'%ni%' <- Negate('%in%')
+
 shinyServer(function(input, output, session) {
   
   #Note for table in systematic tab
@@ -485,6 +487,12 @@ shinyServer(function(input, output, session) {
   observeEvent(input$generate5,{
     c2$Cluster <- "red"
   })
+  observeEvent(input$generate4,{
+    c2$Cluster2 <- NULL
+  })
+  observeEvent(input$generate5,{
+    c2$Cluster2 <- "white"
+  })
   
   
   #Cluster Map
@@ -498,6 +506,7 @@ shinyServer(function(input, output, session) {
     plot(states.orange, col = "orange", add = TRUE)
     plot(states.green, col = "green", add = TRUE)
     plot(counties.ordered[counties.ordered@data$STATE_NAME %in% stateSample, ], col = c2$Cluster, add = TRUE)
+    plot(counties.ordered[counties.ordered@data$STATE_NAME %ni% stateSample, ], col = c2$Cluster2, add = TRUE)
   })
   
   output$clusterLegend <- renderText({
