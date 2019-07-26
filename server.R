@@ -410,7 +410,7 @@ shinyServer(function(input, output, session) {
     hide("myBoxplots")
   })
   observeEvent(input$generate3, {
-    show("myBoxplots")
+    showElement("myBoxplots")
   })
   output$myBoxplots <- renderPlot({
     if (input$generate3 == 0)
@@ -567,7 +567,7 @@ shinyServer(function(input, output, session) {
   
   #This keeps the table from displaying until the sample is displayed 
   observeEvent(input$generate6, {
-    show("systemTable")
+    showElement("systemTable")
   })
   
   output$systemTable <- renderTable(
