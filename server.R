@@ -157,8 +157,8 @@ shinyServer(function(input, output, session) {
   
   #Note for table in systematic tab
   addPopover(session = session, id = "systemTable", title = "Note:",
-    content = "Notice how the relationship of ID's between the counties displayed corresponds to the interval calculated above"
-    , trigger = "hover", placement = "right")
+             content = "Notice how the difference between the ID's of the counties displayed corresponds to the interval calculated above"
+             , trigger = "hover", placement = "right")
   
   addPopover(session = session, id = "myBoxplots", title = "Note:",
              content = "Notice when the strata variable is geographic region, there appears to be a larger difference between strata regarding
@@ -214,7 +214,7 @@ shinyServer(function(input, output, session) {
   #Map
   output$myMap <- renderPlot({
     if (input$generate == 0)
-     return( plot(counties.ordered) + title("US Counties"))
+      return( plot(counties.ordered) + title("US Counties"))
     plot(counties.ordered) + title("Counties in First Sample")
     randomdata <- isolate(random())
     plot(counties.ordered) + title("Counties in First Sample") 
@@ -246,8 +246,10 @@ shinyServer(function(input, output, session) {
     sampleCount <- isolate(input$sampleCount)
     sampleSize <- isolate(input$srsSize)
     sampleMeans <- replicate(sampleCount, mean(sample(final.data$Median.Household.Income, sampleSize)))
-    hist(sampleMeans, main = '', xlab = "Median Household Income", col = "yellow")
+    hist(sampleMeans, main = '', xlab = "", ylab = '', col = "yellow")
     title("Histogram of Median Household Income Across Samples", line = 3.4)
+    mtext(side=1, line=3, "Median Household Income", font=2, cex=1)
+    mtext(side=2, line=3, "Frequency", font=2, cex=1)
     abline(v = 50957.72, col = "red", lwd = 4)
     abline(v = mean(sampleMeans), col = "blue", lwd = 4, lty = "dotted")
     legend("topleft", legend = c("True Population Median Household Income ($50,957.72)", "Average Median Household Income Across Samples"), 
@@ -255,7 +257,7 @@ shinyServer(function(input, output, session) {
   })
   
   ##Stratifcation Tab##
-
+  
   #Making reactive random samples for each of the stratafied regions
   s <- reactiveValues()
   observeEvent(input$generate3, {
@@ -326,19 +328,19 @@ shinyServer(function(input, output, session) {
   #Colors for strata samples
   c <- reactiveValues()
   observeEvent(input$generate3, {
-    c$NE <- "blue"
+    c$NE <- "red"
   })
   observeEvent(input$generate2, {
     c$NE <- "#B0DAFF"
   })
   observeEvent(input$generate3, {
-    c$W <- "yellow"
+    c$W <- "red"
   })
   observeEvent(input$generate2, {
     c$W <- "#FEFFB0"
   })
   observeEvent(input$generate3, {
-    c$MW <- "orange"
+    c$MW <- "red"
   })
   observeEvent(input$generate2, {
     c$MW <- "#FFC795"
@@ -347,10 +349,10 @@ shinyServer(function(input, output, session) {
     c$SW <- "red"
   })
   observeEvent(input$generate2, {
-    c$SW <- "#FF9696"
+    c$SW <- "gray68"
   })
   observeEvent(input$generate3, {
-    c$SE <- "darkgreen"
+    c$SE <- "red"
   })
   observeEvent(input$generate2, {
     c$SE <- "darkolivegreen1"
@@ -377,40 +379,40 @@ shinyServer(function(input, output, session) {
   
   output$myMap2 <- renderCachedPlot(
     {
-    if (input$generate2 == 0)
-      return(plot(counties.ordered) + title("US Counties"))
-    if (isolate(input$strataVar) == "Geographic Region"){
-      plot(counties.ordered) + title("Stratified US Counties: Geographic Region")
-      plot(counties.northEast, col = "#B0DAFF", add = TRUE)
-      plot(counties.northEast[s$NE, ], col = c$NE, add = TRUE)
-      plot(counties.midWest, col = "#FFC795", add = TRUE)
-      plot(counties.midWest[s$MW, ], col = c$MW, add = TRUE)
-      plot(counties.West, col = "#FEFFB0", add = TRUE)
-      plot(counties.West[s$W, ], col = c$W, add = TRUE)
-      plot(counties.southEast, col = "darkolivegreen1", add = TRUE)
-      plot(counties.southEast[s$SE, ], col = c$SE, add = TRUE)
-      plot(counties.southWest, col = "#FF9696", add = TRUE)
-      plot(counties.southWest[s$SW, ], col = c$SW, add = TRUE)
-      legend("bottomleft", legend = c("West (366)", "Midwest (1055)", "Southwest (379)", "Northeast (245)", "Southeast (1063"), col = c("#FEFFB0", "#FFC795", "#FF9696", "#B0DAFF", "darkolivegreen1"), bty = "n", pch = 18, pt.cex = 2, cex = 1.2)
-    }
-    if (isolate(input$strataVar) == "Pop. Per Square Kilometer"){
-      plot(counties.ordered) + title("Stratified US Counties: Population Per Square Kilometer")
-      plot(counties.UR1, col = "#FFE2B3", add = TRUE)
-      plot(counties.UR1[s$Low, ], col = c$Low, add = TRUE)
-      plot(counties.UR2, col = "#FFBDF0", add = TRUE)
-      plot(counties.UR2[s$Med, ], col = c$Med, add = TRUE)
-      plot(counties.UR3, col = "#98FFFD", add = TRUE)
-      plot(counties.UR3[s$High, ], col = c$High, add = TRUE)
-      legend("bottomleft", legend = c("Low (1026)", "Medium (1056)", "High (1026)"), col = c("#FFE2B3", "#FFBDF0", "#98FFFD"), bty = "n", pch = 18, pt.cex = 2, cex = 1.2)
-    }
+      if (input$generate2 == 0)
+        return(plot(counties.ordered) + title("US Counties"))
+      if (isolate(input$strataVar) == "Geographic Region"){
+        plot(counties.ordered) + title("Stratified US Counties: Geographic Region")
+        plot(counties.northEast, col = "#B0DAFF", add = TRUE)
+        plot(counties.northEast[s$NE, ], col = c$NE, add = TRUE)
+        plot(counties.midWest, col = "#FFC795", add = TRUE)
+        plot(counties.midWest[s$MW, ], col = c$MW, add = TRUE)
+        plot(counties.West, col = "#FEFFB0", add = TRUE)
+        plot(counties.West[s$W, ], col = c$W, add = TRUE)
+        plot(counties.southEast, col = "darkolivegreen1", add = TRUE)
+        plot(counties.southEast[s$SE, ], col = c$SE, add = TRUE)
+        plot(counties.southWest, col = "gray68", add = TRUE)
+        plot(counties.southWest[s$SW, ], col = c$SW, add = TRUE)
+        legend("bottomleft", legend = c("West (366)", "Midwest (1055)", "Southwest (379)", "Northeast (245)", "Southeast (1063"), col = c("#FEFFB0", "#FFC795", "gray68", "#B0DAFF", "darkolivegreen1"), bty = "n", pch = 18, pt.cex = 2, cex = 1.2)
+      }
+      if (isolate(input$strataVar) == "Pop. Per Square Kilometer"){
+        plot(counties.ordered) + title("Stratified US Counties: Population Per Square Kilometer")
+        plot(counties.UR1, col = "#FFE2B3", add = TRUE)
+        plot(counties.UR1[s$Low, ], col = c$Low, add = TRUE)
+        plot(counties.UR2, col = "#FFBDF0", add = TRUE)
+        plot(counties.UR2[s$Med, ], col = c$Med, add = TRUE)
+        plot(counties.UR3, col = "#98FFFD", add = TRUE)
+        plot(counties.UR3[s$High, ], col = c$High, add = TRUE)
+        legend("bottomleft", legend = c("Low (1026)", "Medium (1056)", "High (1026)"), col = c("#FFE2B3", "#FFBDF0", "#98FFFD"), bty = "n", pch = 18, pt.cex = 2, cex = 1.2)
+      }
     },
     cacheKeyExpr = {list(input$generate2, (input$strataVar), input$generate3, (s$NE), (c$NE), (s$MW), (c$MW), (s$W), (c$W), (s$SW), (c$SW), (s$SE), (c$SE), (s$Low), (c$Low), (s$Med), (c$Med), (s$High), (c$High))}
-    )
+  )
   
   #Boxplots across samples
-  observeEvent(input$generate2, {
-    hide("myBoxplots")
-  })
+  # observeEvent(input$generate2, {
+  #   hide("myBoxplots")
+  # })
   observeEvent(input$generate3, {
     showElement("myBoxplots")
   })
@@ -422,13 +424,16 @@ shinyServer(function(input, output, session) {
     if ((input$strataVar) == "Geographic Region"){
       boxplot(counties.northEast[s$NE, ]$Unemployment.Rate, counties.midWest[s$MW, ]$Unemployment.Rate, counties.West[s$W, ]$Unemployment.Rate, 
               counties.southEast[s$SE, ]$Unemployment.Rate, counties.southWest[s$SW, ]$Unemployment.Rate, main = "Unemployment Rate Per Strata",
-              ylab = "Unemployment Rate", xlab = "Geographic Region", names = c("Northeast", "Midwest", "West", "Southeast", "Southwest"),
-              col = c("blue", "orange", "yellow", "darkgreen", "red"), outline = FALSE)
+              ylab = "", xlab = "", names = c("Northeast", "Midwest", "West", "Southeast", "Southwest"),
+              col = c("#B0DAFF", "#FFC795", "#FEFFB0", "darkolivegreen1", "gray68"), outline = FALSE)
+      mtext(side=1, line=3, "Geographic Region", font=2, cex=1)
+      mtext(side=2, line=3, "Unemployment Rate", font=2, cex=1)
+      
     }
     if ((input$strataVar) == "Pop. Per Square Kilometer"){
       boxplot(counties.UR1[s$Low, ]$Unemployment.Rate, counties.UR2[s$Med, ]$Unemployment.Rate, counties.UR3[s$High, ]$Unemployment.Rate, 
-                ylim = c(1,7.5), main = "Unemployment Rate Per Strata (Sample)", ylab = "Unemployment Rate", xlab = "Pop. Per Square Km", 
-                names = c("Low", "Medium", "High"), col = c("#FFE2B3", "#FFBDF0", "#98FFFD"), outline = FALSE)
+              ylim = c(1,7.5), main = "Unemployment Rate Per Strata (Sample)", ylab = "Unemployment Rate", xlab = "Pop. Per Square Km", 
+              names = c("Low", "Medium", "High"), col = c("#FFE2B3", "#FFBDF0", "#98FFFD"), outline = FALSE)
     }
   })
   
@@ -585,6 +590,6 @@ shinyServer(function(input, output, session) {
   
   
   
-})
+  })
 
 

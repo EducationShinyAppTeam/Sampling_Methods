@@ -1,11 +1,10 @@
 library(shiny)
-library(ggplot2)
 library(shinyjs)
+library(ggplot2)
 library(shinydashboard)
 library(shinyBS)
 library(shinyWidgets)
 library(shinycssloaders)
-library(dplyr)
 
 ui <- dashboardPage(
   
@@ -18,11 +17,11 @@ ui <- dashboardPage(
                   titleWidth = 300),
   dashboardSidebar(width = 180, 
                    sidebarMenu(id = 'tabs',
-                               menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
                                menuItem("Prerequisites", tabName = "prereq", icon = icon("book")),
+                               menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
                                menuItem("Explore", tabName = "explore", icon = icon("wpexplorer"))
-                    )
-  
+                   )
+                   
   ),
   
   dashboardBody(
@@ -51,8 +50,8 @@ ui <- dashboardPage(
                 h3(strong("Acknowledgements: ")),
                 h4("This app was developed and coded by Sean Klavans. The county data was extracted from", 
                    tags$a(href = "https://www.ers.usda.gov/data-products/county-level-data-sets/download-data/","USDA: County Level Data Sets", style = "text-decoration: underline; color: #cd3333"),"on May 30, 2019.")
-              )
-      ),
+                )
+              ),
       
       tabItem(tabName = "prereq",
               h3(strong("Background: Various Sampling Methods")),
@@ -63,38 +62,38 @@ ui <- dashboardPage(
                          both very time consuming and expensive. This is the main reason to conduct a sample, because in theory the sample is an 
                          accurate representation of the total population.")),
               h4(tags$li("Random sampling is important, because an unbiased representation of the total population is desired in order to provide the most
-                         accurate representation of the population as a whole. In an unbiased sample, each element of the population has an equal chance of
-                         being selected for the sample.")),
+                         accurate representation of the population as a whole. In an unbiased sample, the mean of the sampling distribution is equal to the 
+                         population parameter.")),
               h4(tags$li("However, there are different methods for carrying out a random sample. Which method to use is often determined by research goals, cost,
                          and effectivenes in the given situation. The four main types of random sampling are Simple Random Sampling, Stratified Random Sampling,
                          Cluster Random Sampling, and Systematic Random Sampling")),
               div(style = "text-align: center",
                   bsButton("go2","G O !",icon("bolt"),style = "danger",size = "large",class = "circle grow"))
-      ),
+              ),
       
       tabItem(tabName = "explore",
               
               fluidRow(
                 navbarPage(title = strong("Sampling Methods: "), id = "navMain",
-                      
+                           
                            #SimpleRandomSimulation
                            tabPanel("Simple Random", value = "a",
                                     fluidPage(
                                       fluidRow(
                                         wellPanel(h4("Suppose you want to use a sample to determine the average median household income for counties in the US.
-                                                     Here you are going to be taking a simple random sample. Using this sampling method, each county is 
+                                                     Here you are going to be taking a", strong("simple random sample"),". Using this sampling method, each county is 
                                                      assigned a number (1 - 3108) and you are going to randomly generate numbers based on your selected sample size. 
                                                      Each number that is randomly generated corresponds to a county that will be included in the sample. Additionally, 
                                                      you are going to be replicating your sample a certain number of times and seeing how well your distribution of samples 
                                                      estimates true median population household income. (Play around with the sample size and the number of samples you want
                                                      to be taken and take notice of its effect on accuracy)")
                                         )
-                                      ),
+                                        ),
                                       sidebarLayout(
                                         sidebarPanel(
                                           tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: red}")),
                                           tags$style(HTML(".js-irs-1 .irs-single, .js-irs-1 .irs-bar-edge, .js-irs-1 .irs-bar {background: red}")),
-                                          sliderInput("srsSize", "Select how large you would like your sample sizes to be:", min = 50, max = 2000, value = 1000, step = 25),
+                                          sliderInput("srsSize", "Select how large you would like your sample sizes to be (for each individual sample):", min = 50, max = 2000, value = 1000, step = 25),
                                           sliderInput("sampleCount", "Select how many samples you would like to take:", min = 1, max = 1000, value = 500, step = 25),
                                           bsButton("generate", "Generate Random Samples", icon("sync-alt"), type = "action", style = "success"),
                                           br(), br(),
@@ -114,14 +113,14 @@ ui <- dashboardPage(
                                       #                   column(1, offset = 5, bsButton("next1", "Next>>", style = "danger", size = "medium"))
                                       #                 )
                                       # )
-                                    )
-                           ),
+                                        )
+                                      ),
                            
                            #StratifiedSimulation
                            tabPanel("Stratified", value = "b",
                                     fluidPage(
                                       fluidRow(
-                                        wellPanel(h4("In stratified random sampling, the population is first divided into non-overlapping groups, 
+                                        wellPanel(h4("In", strong("stratified random sampling"), ", the population is first divided into non-overlapping groups, 
                                                      called strata. These are normally larger groups where the elements in each strata share a similar 
                                                      characteristic or are determined by a variable. (On this page, you are going to be stratifying counties 
                                                      based on geographic region and population per square kilometer). Next, a random sample of elements are 
@@ -129,7 +128,7 @@ ui <- dashboardPage(
                                                      (The amount of elements taken from each strata is calculated based on the size of the strata relative to the 
                                                      population size, which you will see on this page). After going through these steps, you will be visualizing
                                                      Unemployment Rate data throughout the counties and between the strata.")
-                                          )
+                                        )
                                         ),
                                       sidebarLayout(
                                         sidebarPanel(
@@ -145,7 +144,7 @@ ui <- dashboardPage(
                                         mainPanel(
                                           useShinyjs(),
                                           plotOutput("myMap2") %>% withSpinner(color = "red"),
-                                          plotOutput("myBoxplots")
+                                          hidden(plotOutput("myBoxplots"))
                                         )
                                       )
                                       # conditionalPanel("input.generate3 !=0", 
@@ -154,21 +153,21 @@ ui <- dashboardPage(
                                       #                    column(1, offset = 10, bsButton("next2", "Next>>", style = "danger", size = "medium"))
                                       #                  )
                                       # )
-                                    )
-                           ),
+                                        )
+                                      ),
                            
                            #ClusterSimulation
                            tabPanel("Cluster", value = "c",
                                     fluidPage(
                                       fluidRow(
-                                        wellPanel(h4("In cluster sampling, the population is first divided into non-overlapping groups, called clusters. Usually, the 
+                                        wellPanel(h4("In", strong("cluster sampling"), ", the population is first divided into non-overlapping groups, called clusters. Usually, the 
                                                      elements in each cluster share a similar characteristic (On this page, you are going to be clustering 
                                                      counties based on their state). Next, a random sample of clusters is selected and every element of the 
                                                      population inside the sampled clusters is included in the final sample. (This is different from a stratified
                                                      sample because only the elements from the randomly selected clusters are included in the sample, whereas in a 
                                                      stratafied sample elements from all of the strata are included in the sample)")
                                         )
-                                      ),
+                                        ),
                                       sidebarLayout(
                                         sidebarPanel(
                                           p(strong("First, generate county clusters based on states: ")),
@@ -188,21 +187,21 @@ ui <- dashboardPage(
                                           textOutput("clusterLegend")
                                         )
                                       )
-                                    )
-                           ),
+                                        )
+                                    ),
                            
                            #SystematicSimulation
                            tabPanel("Systematic", value = "d",
                                     fluidPage(
                                       fluidRow(
-                                        wellPanel(h4("In a systematic random sample, elements from a population are selected based on a random starting point but with a fixed, 
+                                        wellPanel(h4("In a", strong("systematic random sample"), ", elements from a population are selected based on a random starting point but with a fixed, 
                                                      periodical interval (k) that is calculated from the sample size. The starting element is selected, and then each kth element after that is included until the desired 
                                                      sample size is obtained. If this process takes you past the end of your population, it then loops back around to the begininng 
                                                      and continues. On this page, you are going to be going through this process and trying it out for yourself. Furthermore, 
                                                      the 3108 counties on this map are ordered based on their location instead of alphabetically so the map should reflect the impact of the 
                                                      different parameters you define for your sample. (Ordering goes from Northwestern to Southeastern, so Washington counties would be first, 
                                                      Florida counties would be last, etc.) ")
-                                          )
+                                        )
                                         ),
                                       sidebarLayout(
                                         sidebarPanel(
@@ -223,27 +222,27 @@ ui <- dashboardPage(
                                           br(),
                                           p(strong("First five counties included in sample:")),
                                           hidden(tableOutput("systemTable"))
-                                        ),
+                                          ),
                                         mainPanel(
                                           useShinyjs(),
                                           plotOutput("myMap4") %>% withSpinner(color = "red"),
                                           textOutput("mapLegend")
                                         )
                                       )
-                                    )
+                                        )
+                                      )
                            )
-                )
                 
                 
               )
-        
+              
       )
       
       
       
-    )
+              )
     
+    )
+  
+  
   )
-  
-  
-)
