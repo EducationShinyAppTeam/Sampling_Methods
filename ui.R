@@ -5,6 +5,7 @@ library(shinydashboard)
 library(shinyBS)
 library(shinyWidgets)
 library(shinycssloaders)
+library(rsconnect)
 
 ui <- dashboardPage(
   
@@ -226,7 +227,8 @@ ui <- dashboardPage(
                                         mainPanel(
                                           useShinyjs(),
                                           plotOutput("myMap4") %>% withSpinner(color = "red"),
-                                          textOutput("mapLegend")
+                                          textOutput("mapLegend"),
+                                          hidden(plotOutput("systemSummary"))
                                         )
                                       )
                                         )

@@ -9,6 +9,8 @@ library(rgdal)
 library(stats)
 library(raster)
 library(housingData)
+library(rsconnect)
+writeManifest()
 
 #Reading in the collected data to use for calculations
 countydata <- read.csv("CountySamplingData.csv", TRUE, sep = ",",na.strings = TRUE)
@@ -130,6 +132,7 @@ geoCounty4 <- geoCounty4[order(geoCounty4$FIPS),]
 geoCounty4 <- subset(geoCounty4, select = -c(NAME, FIPS))
 counties.ordered@data <- bind_cols(counties.ordered@data, geoCounty4)
 counties.position <- counties.ordered[order(-counties.ordered$lat, counties.ordered$lon),]
+counties.position$Birth.Rate <- as.numeric(counties.position$Birth.Rate)
 
 #Formatting counties.position to use for renderTable
 counties.position2 <- subset(counties.position, select = c(NAME, STATE_NAME))
@@ -250,10 +253,10 @@ shinyServer(function(input, output, session) {
     title("Histogram of Median Household Income Across Samples", line = 3.4)
     mtext(side=1, line=3, "Median Household Income", font=2, cex=1)
     mtext(side=2, line=3, "Frequency", font=2, cex=1)
-    abline(v = 50957.72, col = "red", lwd = 4)
-    abline(v = mean(sampleMeans), col = "blue", lwd = 4, lty = "dotted")
+    abline(v = 50957.72, col = "blue", lwd = 4)
+    abline(v = mean(sampleMeans), col = "red", lwd = 4, lty = "dotted")
     legend("topleft", legend = c("True Population Median Household Income ($50,957.72)", "Average Median Household Income Across Samples"), 
-           col = c("red", "blue"), bty = "n", pch = 18, pt.cex = 2, cex = 1.2, inset = c(-.05, -.18), xpd = TRUE)
+           col = c("blue", "red"), bty = "n", pch = 18, pt.cex = 2, cex = 1.2, inset = c(-.05, -.18), xpd = TRUE)
   })
   
   ##Stratifcation Tab##
@@ -584,9 +587,22 @@ shinyServer(function(input, output, session) {
     showElement("systemTable")
   })
   
+  observeEvent(input$generate6, {
+    showElement("systemSummary")
+  })
+  
   output$systemTable <- renderTable(
     head(counties.position2[randomSystem(),]), spacing = "xs", width = '250px'
   )
+  
+  output$systemSummary <- renderPlot({
+    if (input$generate6 == 0)
+      return(cat(''))
+    randomSystem <- isolate(randomSystem())
+    boxplot(counties.position$Birth.Rate, counties.position[randomSystem, ]$Birth.Rate, 
+            main = "Birth Rate across Counties", names = c("Population", "Sample"), col = c("blue", "red"),
+            outline = FALSE)
+  })
   
   
   
