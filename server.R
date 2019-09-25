@@ -1,16 +1,9 @@
-library(shiny)
-library(shinyjs)
-library(shinyBS)
-library(maps)
-library(ggplot2)
-library(mapproj)
-library(dplyr)
-library(rgdal)
-library(stats)
-library(raster)
-library(housingData)
-library(rsconnect)
-writeManifest()
+packages <- c("shiny","shinyjs","shinyBS","shinyWidgets","shinycssloaders",
+              "maps","ggplot2","mapproj","dplyr","rgdal","stats","raster",
+              "housingData","rsconnect","magrittr")
+lapply(packages,library,character.only=TRUE)
+
+#writeManifest()
 
 #Reading in the collected data to use for calculations
 countydata <- read.csv("CountySamplingData.csv", TRUE, sep = ",",na.strings = TRUE)
