@@ -218,34 +218,6 @@
         "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-07-26 13:09:34 UTC; unix"
       }
     },
-    "askpass": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "askpass",
-        "Type": "Package",
-        "Title": "Safe Password Entry for R, Git, and SSH",
-        "Version": "1.1",
-        "Authors@R": "person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n    email = \"jeroen@berkeley.edu\", comment = c(ORCID = \"0000-0002-4035-0289\"))",
-        "Description": "Cross-platform utilities for prompting the user for credentials or a \n    passphrase, for example to authenticate with a server or read a protected key.\n    Includes native programs for MacOS and Windows, hence no 'tcltk' is required. \n    Password entry can be invoked in two different ways: directly from R via the \n    askpass() function, or indirectly as password-entry back-end for 'ssh-agent' \n    or 'git-credential' via the SSH_ASKPASS and GIT_ASKPASS environment variables.\n    Thereby the user can be prompted for credentials or a passphrase if needed \n    when R calls out to git or ssh.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/jeroen/askpass#readme",
-        "BugReports": "https://github.com/jeroen/askpass/issues",
-        "Encoding": "UTF-8",
-        "LazyData": "true",
-        "Imports": "sys (>= 2.1)",
-        "RoxygenNote": "6.1.1",
-        "Suggests": "testthat",
-        "Language": "en-US",
-        "NeedsCompilation": "yes",
-        "Packaged": "2019-01-13 12:08:17 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-01-13 12:50:03 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 22:26:39 UTC; unix"
-      }
-    },
     "assertthat": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com/",
@@ -427,36 +399,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2017-09-16 19:49:46 UTC",
         "Built": "R 3.6.0; ; 2019-04-26 19:49:57 UTC; unix"
-      }
-    },
-    "curl": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "curl",
-        "Type": "Package",
-        "Title": "A Modern and Flexible Web Client for R",
-        "Version": "4.1",
-        "Authors@R": "c(\n    person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\n      comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", role = \"ctb\"),\n    person(\"RStudio\", role = \"cph\")\n    )",
-        "Description": "The curl() and curl_download() functions provide highly\n    configurable drop-in replacements for base url() and download.file() with\n    better performance, support for encryption (https, ftps), gzip compression,\n    authentication, and other 'libcurl' goodies. The core of the package implements a\n    framework for performing fully customized requests where data can be processed\n    either in memory, on disk, or streaming via the callback or connection\n    interfaces. Some knowledge of 'libcurl' is recommended; for a more-user-friendly\n    web client see the 'httr' package which builds on this package with http\n    specific tools and logic.",
-        "License": "MIT + file LICENSE",
-        "SystemRequirements": "libcurl: libcurl-devel (rpm) or\nlibcurl4-openssl-dev (deb).",
-        "URL": "https://jeroen.cran.dev/curl (docs)\nhttps://github.com/jeroen/curl#readme (devel)\nhttps://curl.haxx.se/libcurl/ (upstream)",
-        "BugReports": "https://github.com/jeroen/curl/issues",
-        "Suggests": "askpass, spelling, testthat (>= 1.0.0), knitr, jsonlite,\nrmarkdown, magrittr, httpuv (>= 1.4.4), webutils",
-        "VignetteBuilder": "knitr",
-        "Depends": "R (>= 3.0.0)",
-        "LazyData": "true",
-        "RoxygenNote": "6.1.1",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "NeedsCompilation": "yes",
-        "Packaged": "2019-09-15 18:40:16 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Hadley Wickham [ctb],\n  RStudio [cph]",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-09-16 10:40:05 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-09-17 12:43:35 UTC; unix"
       }
     },
     "digest": {
@@ -1055,60 +997,6 @@
         "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-08-02 13:40:27 UTC; unix"
       }
     },
-    "openssl": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "openssl",
-        "Type": "Package",
-        "Title": "Toolkit for Encryption, Signatures and Certificates Based on\nOpenSSL",
-        "Version": "1.4.1",
-        "Authors@R": "c(person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\n    comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Oliver\", \"Keyes\", role = \"ctb\"))",
-        "Description": "Bindings to OpenSSL libssl and libcrypto, plus custom SSH key parsers.\n    Supports RSA, DSA and EC curves P-256, P-384, P-521, and curve25519. Cryptographic\n    signatures can either be created and verified manually or via x509 certificates. \n    AES can be used in cbc, ctr or gcm mode for symmetric encryption; RSA for asymmetric\n    (public key) encryption or EC for Diffie Hellman. High-level envelope functions \n    combine RSA and AES for encrypting arbitrary sized data. Other utilities include key\n    generators, hash functions (md5, sha1, sha256, etc), base64 encoder, a secure random\n    number generator, and 'bignum' math methods for manually performing crypto \n    calculations on large multibyte integers.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/jeroen/openssl#readme",
-        "BugReports": "https://github.com/jeroen/openssl/issues",
-        "SystemRequirements": "OpenSSL >= 1.0.1",
-        "VignetteBuilder": "knitr",
-        "Imports": "askpass",
-        "Suggests": "testthat, digest, knitr, rmarkdown, jsonlite, jose, sodium",
-        "RoxygenNote": "6.1.1",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "yes",
-        "Packaged": "2019-07-16 17:55:20 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Oliver Keyes [ctb]",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-07-18 06:35:27 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-07-19 16:45:40 UTC; unix"
-      }
-    },
-    "packrat": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "packrat",
-        "Type": "Package",
-        "Title": "A Dependency Management System for Projects and their R Package\nDependencies",
-        "Version": "0.5.0",
-        "Author": "Kevin Ushey, Jonathan McPherson, Joe Cheng, Aron Atkins, JJ Allaire",
-        "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
-        "Description": "Manage the R packages your project depends\n    on in an isolated, portable, and reproducible way.",
-        "License": "GPL-2",
-        "Depends": "R (>= 3.0.0)",
-        "Imports": "tools, utils",
-        "Suggests": "testthat (>= 0.7), devtools, httr, knitr, rmarkdown",
-        "URL": "https://github.com/rstudio/packrat/",
-        "BugReports": "https://github.com/rstudio/packrat/issues",
-        "RoxygenNote": "6.1.1",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2018-11-13 23:16:36 UTC; kevin",
-        "Repository": "CRAN",
-        "Date/Publication": "2018-11-14 08:40:02 UTC",
-        "Built": "R 3.6.0; ; 2019-04-26 20:23:04 UTC; unix"
-      }
-    },
     "pillar": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com/",
@@ -1379,54 +1267,6 @@
         "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-06-26 12:33:49 UTC; unix"
       }
     },
-    "rsconnect": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "rsconnect",
-        "Type": "Package",
-        "Title": "Deployment Interface for R Markdown Documents and Shiny\nApplications",
-        "Version": "0.8.15",
-        "Author": "JJ Allaire",
-        "Maintainer": "Jonathan McPherson <jonathan@rstudio.com>",
-        "Description": "Programmatic deployment interface for 'RPubs', 'shinyapps.io', and\n    'RStudio Connect'. Supported content types include R Markdown documents,\n    Shiny applications, Plumber APIs, plots, and static web content.",
-        "Depends": "R (>= 3.0.0)",
-        "Imports": "curl, jsonlite, openssl, packrat (>= 0.4.8-1), rstudioapi (>=\n0.5), yaml (>= 2.1.5)",
-        "Suggests": "RCurl, callr, httpuv, knitr, plumber (>= 0.3.2), reticulate,\nrmarkdown (>= 1.1), shiny, sourcetools, testthat, xtable",
-        "License": "GPL-2",
-        "RoxygenNote": "6.1.1",
-        "NeedsCompilation": "no",
-        "Packaged": "2019-07-22 21:53:14 UTC; jmcphers",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-07-22 22:50:02 UTC",
-        "Built": "R 3.6.0; ; 2019-07-23 11:52:07 UTC; unix"
-      }
-    },
-    "rstudioapi": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "rstudioapi",
-        "Title": "Safely Access the RStudio API",
-        "Description": "Access the RStudio API (if available) and provide informative error\n    messages when it's not.",
-        "Version": "0.10",
-        "Authors@R": "c(\n    person(\"Kevin\", \"Ushey\", role = c(\"aut\", \"cre\"), email = \"kevin@rstudio.com\"),\n    person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"),\n    person(\"Hadley\", \"Wickham\", role = c(\"aut\"), email = \"hadley@rstudio.com\"),\n    person(\"Gary\", \"Ritchie\", role = c(\"aut\"), email = \"gary@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\")\n    )",
-        "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/rstudio/rstudioapi",
-        "BugReports": "https://github.com/rstudio/rstudioapi/issues",
-        "RoxygenNote": "6.1.1",
-        "Suggests": "testthat, knitr, rmarkdown",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2019-03-19 18:45:29 UTC; kevin",
-        "Author": "Kevin Ushey [aut, cre],\n  JJ Allaire [aut],\n  Hadley Wickham [aut],\n  Gary Ritchie [aut],\n  RStudio [cph]",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-03-19 20:30:03 UTC",
-        "Built": "R 3.6.0; ; 2019-04-26 19:51:22 UTC; unix"
-      }
-    },
     "scales": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com/",
@@ -1511,132 +1351,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2019-04-22 16:00:09 UTC",
         "Built": "R 3.6.0; ; 2019-04-27 02:51:01 UTC; unix"
-      }
-    },
-    "shinyBS": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "shinyBS",
-        "Type": "Package",
-        "Title": "Twitter Bootstrap Components for Shiny",
-        "Version": "0.61",
-        "Date": "2015-03-30",
-        "Author": "Eric Bailey",
-        "Maintainer": "Eric Bailey <ebailey@idem.in.gov>",
-        "Description": "Adds additional Twitter Bootstrap components to Shiny. ",
-        "Imports": "shiny (>= 0.11), htmltools",
-        "URL": "https://ebailey78.github.io/shinyBS",
-        "BugReports": "https://github.com/ebailey78/shinyBS/issues",
-        "License": "GPL-3",
-        "Packaged": "2015-03-30 12:16:24 UTC; ebailey",
-        "NeedsCompilation": "no",
-        "Repository": "CRAN",
-        "Date/Publication": "2015-03-31 07:52:38",
-        "Built": "R 3.6.0; ; 2019-04-27 02:52:12 UTC; unix"
-      }
-    },
-    "shinyWidgets": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "shinyWidgets",
-        "Title": "Custom Inputs Widgets for Shiny",
-        "Version": "0.4.9",
-        "Authors@R": "c(\n  person(\"Victor\", \"Perrier\", email = \"victor.perrier@dreamrs.fr\", role = c(\"aut\", \"cre\")),\n  person(\"Fanny\", \"Meyer\", email = \"fanny.meyer@dreamrs.fr\", role = \"aut\"),\n  person(\"David\", \"Granjon\", email = \"david.granjon@uzh.ch\", role = \"aut\"),\n  person(\"Ian\", \"Fellows\", role = \"ctb\", comment = \"Methods for mutating vertical tabs & updateMultiInput\"),\n  person(\"Wil\", \"Davis\", role = \"ctb\", comment = \"numericRangeInput function\"),\n  person(\"SnapAppointments\", \"\", role = \"cph\", comment = \"bootstrap-select\"),\n  person(\"Mattia\", \"Larentis\", role = c(\"ctb\", \"cph\"), comment = \"Bootstrap Switch\"),\n  person(\"Emanuele\", \"Marchi\", role = c(\"ctb\", \"cph\"), comment = \"Bootstrap Switch\"),\n  person(\"Mark\", \"Otto\", role = \"ctb\", comment = \"Bootstrap library\"),\n  person(\"Jacob\", \"Thornton\", role = \"ctb\", comment = \"Bootstrap library\"),\n  person(family = \"Bootstrap contributors\", role = \"ctb\", comment = \"Bootstrap library\"),\n  person(family = \"Twitter, Inc\", role = \"cph\", comment = \"Bootstrap library\"),\n  person(family = \"Flatlogic\", role = \"cph\", comment = \"Awesome Bootstrap Checkbox\"),\n  person(\"mouse0270\", role = c(\"ctb\", \"cph\"), comment = \"Material Design Switch\"),\n  person(\"Tristan\", \"Edwards\", role = c(\"ctb\", \"cph\"), comment = \"SweetAlert\"),\n  person(\"Fabian\", \"Lindfors\", role = c(\"ctb\", \"cph\"), comment = \"multi.js\"),\n  person(\"Anthony\", \"Terrien\", role = c(\"ctb\", \"cph\"), comment = \"jQuery Knob\"),\n  person(\"Daniel\", \"Eden\", role = c(\"ctb\", \"cph\"), comment = \"animate.css\"),\n  person(\"Ganapati\", \"V S\", role = c(\"ctb\", \"cph\"), comment = \"bttn.css\"),\n  person(\"Brian\", \"Grinstead\", role = c(\"ctb\", \"cph\"), comment = \"Spectrum\"),\n  person(\"Lokesh\", \"Rajendran\", role = c(\"ctb\", \"cph\"), comment = \"pretty-checkbox\"),\n  person(\"Leon\", \"Gersen\", role = c(\"ctb\", \"cph\"), comment = \"wnumb & noUiSlider\"),\n  person(\"Timofey\", \"Marochkin\", role = c(\"ctb\", \"cph\"), comment = \"air-datepicker\"),\n  person(\"Tobias\", \"Ahlin\", role = c(\"ctb\", \"cph\"), comment = \"CSS spin\")\n  )",
-        "Description": "Collection of custom input controls and user interface components for 'Shiny' applications. \n  Give your applications a unique and colorful style !",
-        "URL": "https://github.com/dreamRs/shinyWidgets",
-        "BugReports": "https://github.com/dreamRs/shinyWidgets/issues",
-        "Depends": "R (>= 3.1.0)",
-        "Imports": "shiny (>= 0.14), htmltools, jsonlite, grDevices, scales",
-        "License": "GPL-3 | file LICENSE",
-        "Encoding": "UTF-8",
-        "LazyData": "true",
-        "RoxygenNote": "6.1.1",
-        "Suggests": "shinydashboard, viridisLite, RColorBrewer, testthat, covr,\nshinydashboardPlus, bs4Dash, argonR, argonDash, tablerDash",
-        "NeedsCompilation": "no",
-        "Packaged": "2019-09-10 16:05:59 UTC; perri",
-        "Author": "Victor Perrier [aut, cre],\n  Fanny Meyer [aut],\n  David Granjon [aut],\n  Ian Fellows [ctb] (Methods for mutating vertical tabs &\n    updateMultiInput),\n  Wil Davis [ctb] (numericRangeInput function),\n  SnapAppointments [cph] (bootstrap-select),\n  Mattia Larentis [ctb, cph] (Bootstrap Switch),\n  Emanuele Marchi [ctb, cph] (Bootstrap Switch),\n  Mark Otto [ctb] (Bootstrap library),\n  Jacob Thornton [ctb] (Bootstrap library),\n  Bootstrap contributors [ctb] (Bootstrap library),\n  Twitter, Inc [cph] (Bootstrap library),\n  Flatlogic [cph] (Awesome Bootstrap Checkbox),\n  mouse0270 [ctb, cph] (Material Design Switch),\n  Tristan Edwards [ctb, cph] (SweetAlert),\n  Fabian Lindfors [ctb, cph] (multi.js),\n  Anthony Terrien [ctb, cph] (jQuery Knob),\n  Daniel Eden [ctb, cph] (animate.css),\n  Ganapati V S [ctb, cph] (bttn.css),\n  Brian Grinstead [ctb, cph] (Spectrum),\n  Lokesh Rajendran [ctb, cph] (pretty-checkbox),\n  Leon Gersen [ctb, cph] (wnumb & noUiSlider),\n  Timofey Marochkin [ctb, cph] (air-datepicker),\n  Tobias Ahlin [ctb, cph] (CSS spin)",
-        "Maintainer": "Victor Perrier <victor.perrier@dreamrs.fr>",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-09-10 16:40:05 UTC",
-        "Built": "R 3.6.0; ; 2019-09-11 12:17:20 UTC; unix"
-      }
-    },
-    "shinycssloaders": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "shinycssloaders",
-        "Type": "Package",
-        "Title": "Add CSS Loading Animations to 'shiny' Outputs",
-        "Version": "0.2.0",
-        "Date": "2017-05-03",
-        "Authors@R": "c(person(\"Andras\",\"Sali\",email=\"andras.sali@alphacruncher.hu\",role=c(\"aut\",\"cre\"),comment=\"Creator of Shiny-wrapper code\"),person(\"Luke\",\"Hass\",role=c(\"ctb\",\"cph\"),comment=\"Author of included CSS loader code\"))",
-        "Description": "Create a lightweight Shiny wrapper for the css-loaders created by Luke Hass <https://github.com/lukehaas/css-loaders>. Wrapping a Shiny output will automatically show a loader when the output is (re)calculating.",
-        "License": "GPL-3",
-        "URL": "https://github.com/andrewsali/shinycssloaders",
-        "Imports": "digest, glue, grDevices, shiny",
-        "RoxygenNote": "5.0.1",
-        "NeedsCompilation": "no",
-        "Packaged": "2017-05-12 19:20:11 UTC; andras",
-        "Author": "Andras Sali [aut, cre] (Creator of Shiny-wrapper code),\n  Luke Hass [ctb, cph] (Author of included CSS loader code)",
-        "Maintainer": "Andras Sali <andras.sali@alphacruncher.hu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2017-05-12 22:46:15 UTC",
-        "Built": "R 3.6.0; ; 2019-04-27 02:59:51 UTC; unix"
-      }
-    },
-    "shinydashboard": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "shinydashboard",
-        "Title": "Create Dashboards with 'Shiny'",
-        "Version": "0.7.1",
-        "Authors@R": "c(\n    person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\"),\n    person(\"Barbara\", \"Borges Ribeiro\", role = \"aut\", email = \"barbara@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\"),\n    person(family = \"Almasaeed Studio\", role = c(\"ctb\", \"cph\"), comment = \"AdminLTE theme for Bootstrap\"),\n    person(family = \"Adobe Systems Incorporated\", role = c(\"ctb\", \"cph\"), comment = \"Source Sans Pro font\")\n    )",
-        "Description": "Create dashboards with 'Shiny'. This package provides\n    a theme on top of 'Shiny', making it easy to create attractive dashboards.",
-        "URL": "http://rstudio.github.io/shinydashboard/",
-        "Depends": "R (>= 3.0)",
-        "License": "GPL (>= 2) | file LICENSE",
-        "Imports": "utils, shiny (>= 1.0.0), htmltools (>= 0.2.6), promises",
-        "BugReports": "https://github.com/rstudio/shinydashboard",
-        "RoxygenNote": "6.0.1.9000",
-        "NeedsCompilation": "no",
-        "Packaged": "2018-10-17 16:36:04 UTC; winston",
-        "Author": "Winston Chang [aut, cre],\n  Barbara Borges Ribeiro [aut],\n  RStudio [cph],\n  Almasaeed Studio [ctb, cph] (AdminLTE theme for Bootstrap),\n  Adobe Systems Incorporated [ctb, cph] (Source Sans Pro font)",
-        "Maintainer": "Winston Chang <winston@rstudio.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2018-10-17 18:00:02 UTC",
-        "Built": "R 3.6.0; ; 2019-04-27 04:16:31 UTC; unix"
-      }
-    },
-    "shinyjs": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "shinyjs",
-        "Title": "Easily Improve the User Experience of Your Shiny Apps in Seconds",
-        "Version": "1.0",
-        "Authors@R": "person(\"Dean\", \"Attali\", email = \"daattali@gmail.com\",\n    role = c(\"aut\", \"cre\"))",
-        "Description": "Perform common useful JavaScript operations in Shiny apps that will\n    greatly improve your apps without having to know any JavaScript. Examples\n    include: hiding an element, disabling an input, resetting an input back to\n    its original value, delaying code execution by a few seconds, and many more\n    useful functions for both the end user and the developer. 'shinyjs' can also\n    be used to easily call your own custom JavaScript functions from R.",
-        "URL": "https://deanattali.com/shinyjs",
-        "BugReports": "https://github.com/daattali/shinyjs/issues",
-        "Depends": "R (>= 3.1.0)",
-        "Imports": "digest (>= 0.6.8), htmltools (>= 0.2.9), jsonlite, shiny (>=\n1.0.0)",
-        "Suggests": "knitr (>= 1.7), rmarkdown, shinyAce, testthat (>= 0.9.1), V8\n(>= 0.6)",
-        "License": "AGPL-3",
-        "SystemRequirements": "pandoc with https support",
-        "LazyData": "true",
-        "VignetteBuilder": "knitr",
-        "RoxygenNote": "6.0.1",
-        "NeedsCompilation": "no",
-        "Packaged": "2018-01-08 20:00:22 UTC; Dean",
-        "Author": "Dean Attali [aut, cre]",
-        "Maintainer": "Dean Attali <daattali@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2018-01-08 22:21:13 UTC",
-        "Built": "R 3.6.0; ; 2019-04-27 04:16:08 UTC; unix"
       }
     },
     "sourcetools": {
@@ -1743,33 +1457,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2019-02-10 03:40:03 UTC",
         "Built": "R 3.6.0; ; 2019-04-26 22:26:53 UTC; unix"
-      }
-    },
-    "sys": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "sys",
-        "Type": "Package",
-        "Title": "Powerful and Reliable Tools for Running System Commands in R",
-        "Version": "3.3",
-        "Authors@R": "c(person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n      email = \"jeroen@berkeley.edu\", comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = \"ctb\"))",
-        "Description": "Drop-in replacements for the base system2() function with fine control\n    and consistent behavior across platforms. Supports clean interruption, timeout, \n    background tasks, and streaming STDIN / STDOUT / STDERR over binary or text \n    connections. Arguments on Windows automatically get encoded and quoted to work \n    on different locales.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/jeroen/sys",
-        "BugReports": "https://github.com/jeroen/sys/issues",
-        "Encoding": "UTF-8",
-        "LazyData": "true",
-        "RoxygenNote": "6.1.1",
-        "Suggests": "unix (>= 1.4), spelling, testthat",
-        "Language": "en-US",
-        "NeedsCompilation": "yes",
-        "Packaged": "2019-08-21 11:45:42 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Gábor Csárdi [ctb]",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2019-08-21 14:20:02 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-08-22 13:40:46 UTC; unix"
       }
     },
     "tibble": {
@@ -1993,29 +1680,6 @@
         "Built": "R 3.6.0; ; 2019-04-26 19:49:57 UTC; unix"
       }
     },
-    "yaml": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com/",
-      "description": {
-        "Package": "yaml",
-        "Type": "Package",
-        "Title": "Methods to Convert R Data to YAML and Back",
-        "Date": "2018-07-20",
-        "Version": "2.2.0",
-        "Suggests": "RUnit",
-        "Author": "Jeremy Stephens [aut, cre], Kirill Simonov [aut], Yihui Xie [ctb],\n  Zhuoer Dong [ctb], Hadley Wickham [ctb], Jeffrey Horner [ctb], reikoch [ctb],\n  Will Beasley [ctb], Brendan O'Connor [ctb], Gregory R. Warnes [ctb]",
-        "Maintainer": "Jeremy Stephens <jeremy.f.stephens@vumc.org>",
-        "License": "BSD_3_clause + file LICENSE",
-        "Description": "Implements the 'libyaml' 'YAML' 1.1 parser and emitter\n  (<http://pyyaml.org/wiki/LibYAML>) for R.",
-        "URL": "https://github.com/viking/r-yaml/",
-        "BugReports": "https://github.com/viking/r-yaml/issues",
-        "NeedsCompilation": "yes",
-        "Packaged": "2018-07-24 19:09:41 UTC; stephej1",
-        "Repository": "CRAN",
-        "Date/Publication": "2018-07-25 15:40:03 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-04-26 19:50:26 UTC; unix"
-      }
-    },
     "zeallot": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com/",
@@ -2044,6 +1708,9 @@
     }
   },
   "files": {
+    ".Rapp.history": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
     "CountySamplingData.csv": {
       "checksum": "82d97fa5cddb8e837b5c7eca2fe71ea9"
     },
@@ -2052,9 +1719,6 @@
     },
     "gadm36_USA_2_sp.rds": {
       "checksum": "891532123b2a793346897299d10b9879"
-    },
-    "packrat/desc/askpass": {
-      "checksum": "94189e2591613758acecb70968843b7e"
     },
     "packrat/desc/assertthat": {
       "checksum": "5546908c8abf7dc750e9b59d246d8082"
@@ -2079,9 +1743,6 @@
     },
     "packrat/desc/crayon": {
       "checksum": "b24ecaa8a9670c0265dba74ec47767ba"
-    },
-    "packrat/desc/curl": {
-      "checksum": "8a883fc11f400ffb26d28b6cd81dfb6e"
     },
     "packrat/desc/DBI": {
       "checksum": "71db8026fd5079348d2e23d2fa8f72c2"
@@ -2164,12 +1825,6 @@
     "packrat/desc/nlme": {
       "checksum": "02db2085e6ccbaa35072b6b41edd4a84"
     },
-    "packrat/desc/openssl": {
-      "checksum": "b7e1b3b239f365ad2ca75a8a688df865"
-    },
-    "packrat/desc/packrat": {
-      "checksum": "0c9b4ac5c03c439b3da8bbbbc1f48247"
-    },
     "packrat/desc/pillar": {
       "checksum": "3f46744b8896c36b848c783cd87e47ab"
     },
@@ -2209,12 +1864,6 @@
     "packrat/desc/rlang": {
       "checksum": "3e3d0bdaa6fcf575224d753c1b23cc6d"
     },
-    "packrat/desc/rsconnect": {
-      "checksum": "23481e5c922105688cb5763ef7d24e5b"
-    },
-    "packrat/desc/rstudioapi": {
-      "checksum": "8398d42d7051e0f27685cc1d0ad58885"
-    },
     "packrat/desc/scales": {
       "checksum": "ce51b01c0731670a4f5ddbfe531bab71"
     },
@@ -2223,21 +1872,6 @@
     },
     "packrat/desc/shiny": {
       "checksum": "3c6b00802a5597df80d5f7f4f53ebc3f"
-    },
-    "packrat/desc/shinyBS": {
-      "checksum": "d2fcbd1c5e8a234c086b3df4e64b6436"
-    },
-    "packrat/desc/shinycssloaders": {
-      "checksum": "936b388db2c308d82042556d8f5d4ccd"
-    },
-    "packrat/desc/shinydashboard": {
-      "checksum": "1c37bc2048f42e1940101727ee1a853a"
-    },
-    "packrat/desc/shinyjs": {
-      "checksum": "fb049a982f1d78e70b9903dd8aa0276c"
-    },
-    "packrat/desc/shinyWidgets": {
-      "checksum": "03e018d22323d06980fcffc15f28f9e9"
     },
     "packrat/desc/sourcetools": {
       "checksum": "966c4e942ba212e977a95f8fff0eb356"
@@ -2250,9 +1884,6 @@
     },
     "packrat/desc/stringr": {
       "checksum": "eab92d1eca86a5f575ee23cdebd6e70f"
-    },
-    "packrat/desc/sys": {
-      "checksum": "c150e1320b344b91edd18d72fc260116"
     },
     "packrat/desc/tibble": {
       "checksum": "27ce2534318b4cd4c8f2788637982931"
@@ -2278,14 +1909,11 @@
     "packrat/desc/xtable": {
       "checksum": "526e6f7be3cf3228226e3aab27258be6"
     },
-    "packrat/desc/yaml": {
-      "checksum": "3bd7b41b3611da840639b44b8d984210"
-    },
     "packrat/desc/zeallot": {
       "checksum": "42e12e4cc19c4759dca5c1d9df2df8d7"
     },
     "packrat/packrat.lock": {
-      "checksum": "0c585531d1db58096f1271a00a68a88e"
+      "checksum": "e0b1c0e568b57e48601df46b4f3aae12"
     },
     "README.md": {
       "checksum": "6eb72dd18580287f5274aaf58bd58b23"
@@ -2294,10 +1922,10 @@
       "checksum": "ed614a9eb2852d3da35366de71e3928e"
     },
     "server.R": {
-      "checksum": "e91324b7adef948c87e1bb42659bf17b"
+      "checksum": "b00d967d9a6b3dba596a1e34ee204e2a"
     },
     "ui.R": {
-      "checksum": "34995d78da3a8a9ea6efc8e77e34696a"
+      "checksum": "73fb8dd65d8204170f71554b06f35567"
     },
     "UScounties/UScounties.dbf": {
       "checksum": "6bca2b1d01b7b13fa143182c9f58d67c"
