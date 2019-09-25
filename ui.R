@@ -1,11 +1,15 @@
-library(shiny)
-library(shinyjs)
-library(ggplot2)
-library(shinydashboard)
-library(shinyBS)
-library(shinyWidgets)
-library(shinycssloaders)
-library(rsconnect)
+packages <- c("shiny","shinyjs","shinyBS","shinyWidgets","shinycssloaders",
+            "shinydashboard","ggplot2","magrittr")
+lapply(packages,library,character.only=TRUE)
+
+#library(shiny)
+#library(shinyjs)
+#library(ggplot2)
+#library(shinydashboard)
+#library(shinyBS)
+#library(shinyWidgets)
+#library(shinycssloaders)
+#library(magrittr)
 
 ui <- dashboardPage(
   
