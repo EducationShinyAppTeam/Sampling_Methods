@@ -406,9 +406,9 @@
       "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "digest",
-        "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\n and Matthew de Queljoe.",
-        "Version": "0.6.21",
-        "Date": "2019-09-19",
+        "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, and Kendon Bell.",
+        "Version": "0.6.20",
+        "Date": "2019-07-04",
         "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
         "Title": "Create Compact Hash Digests of R Objects",
         "Description": "Implementation of a function 'digest()' for the creation \n of hash digests of arbitrary R objects (using the 'md5', 'sha-1', 'sha-256', \n 'crc32', 'xxhash', 'murmurhash' and 'spookyhash' algorithms) permitting easy\n comparison of R language objects, as well as functions such as'hmac()' to\n create hash-based message authentication code. Please note that this package\n is not meant to be deployed for cryptographic purposes for which more\n comprehensive (and widely tested) libraries such as 'OpenSSL' should be\n used.",
@@ -419,10 +419,10 @@
         "Suggests": "tinytest, knitr, rmarkdown",
         "VignetteBuilder": "knitr",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-09-19 10:37:39.11891 UTC; edd",
+        "Packaged": "2019-07-04 13:26:33.39935 UTC; edd",
         "Repository": "CRAN",
-        "Date/Publication": "2019-09-20 23:20:04 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-09-21 12:57:37 UTC; unix"
+        "Date/Publication": "2019-07-04 14:40:03 UTC",
+        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-07-05 13:52:35 UTC; unix"
       }
     },
     "dplyr": {
@@ -482,7 +482,7 @@
       "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "ellipsis",
-        "Version": "0.3.0",
+        "Version": "0.2.0.1",
         "Title": "Tools for Working with ...",
         "Description": "The ellipsis is a powerful tool for extending functions. Unfortunately \n    this power comes at a cost: misspelled arguments will be silently ignored. \n    The ellipsis package provides a collection of functions to catch problems\n    and alert the user.",
         "Authors@R": "c(\n      person(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", role = c(\"aut\", \"cre\")),\n      person(\"RStudio\", role = \"cph\")\n    )",
@@ -490,18 +490,18 @@
         "Encoding": "UTF-8",
         "LazyData": "true",
         "RoxygenNote": "6.1.1",
-        "URL": "https://ellipsis.r-lib.org, https://github.com/r-lib/ellipsis",
+        "URL": "https://github.com/r-lib/ellipsis",
         "BugReports": "https://github.com/r-lib/ellipsis/issues",
-        "Depends": "R (>= 3.2)",
+        "Depends": "R (>= 3.1)",
         "Imports": "rlang (>= 0.3.0)",
         "Suggests": "covr, testthat",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-09-20 20:15:40 UTC; jhester",
+        "Packaged": "2019-07-02 09:00:09 UTC; ripley",
         "Author": "Hadley Wickham [aut, cre],\n  RStudio [cph]",
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
-        "Date/Publication": "2019-09-20 20:40:02 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-09-21 17:00:58 UTC; unix"
+        "Date/Publication": "2019-07-02 09:27:27 UTC",
+        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-07-03 18:22:18 UTC; unix"
       }
     },
     "fansi": {
@@ -900,7 +900,7 @@
       "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "mgcv",
-        "Version": "1.8-29",
+        "Version": "1.8-28",
         "Author": "Simon Wood <simon.wood@r-project.org>",
         "Maintainer": "Simon Wood <simon.wood@r-project.org>",
         "Title": "Mixed GAM Computation Vehicle with Automatic Smoothness\nEstimation",
@@ -913,10 +913,10 @@
         "ByteCompile": "yes",
         "License": "GPL (>= 2)",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-09-20 08:29:01 UTC; sw283",
+        "Packaged": "2019-03-21 08:56:32 UTC; sw283",
         "Repository": "CRAN",
-        "Date/Publication": "2019-09-20 10:00:04 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-09-21 13:06:30 UTC; unix"
+        "Date/Publication": "2019-03-21 11:40:07 UTC",
+        "Built": "R 3.6.1; x86_64-apple-darwin15.6.0; 2019-07-06 02:04:01 UTC; unix"
       }
     },
     "mime": {
@@ -973,8 +973,8 @@
       "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "nlme",
-        "Version": "3.1-141",
-        "Date": "2019-08-01",
+        "Version": "3.1-140",
+        "Date": "2019-05-1",
         "Priority": "recommended",
         "Title": "Linear and Nonlinear Mixed Effects Models",
         "Authors@R": "c(person(\"José\", \"Pinheiro\", role = \"aut\", comment = \"S version\"),\n             person(\"Douglas\", \"Bates\", role = \"aut\", comment = \"up to 2007\"),\n             person(\"Saikat\", \"DebRoy\", role = \"ctb\", comment = \"up to 2002\"),\n             person(\"Deepayan\", \"Sarkar\", role = \"ctb\", comment = \"up to 2005\"),\n             person(\"EISPACK authors\", role = \"ctb\", comment = \"src/rs.f\"),\n\t     person(\"Siem\", \"Heisterkamp\", role = \"ctb\", comment = \"Author fixed sigma\"),\n             person(\"Bert\", \"Van Willigen\",role = \"ctb\", comment = \"Programmer fixed sigma\"),\n\t     person(\"R-core\", email = \"R-core@R-project.org\",\n                    role = c(\"aut\", \"cre\")))",
@@ -989,12 +989,12 @@
         "BugReports": "https://bugs.r-project.org",
         "URL": "https://svn.r-project.org/R-packages/trunk/nlme",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-08-01 03:39:13 UTC; hornik",
+        "Packaged": "2019-05-12 07:16:10 UTC; ripley",
         "Author": "José Pinheiro [aut] (S version),\n  Douglas Bates [aut] (up to 2007),\n  Saikat DebRoy [ctb] (up to 2002),\n  Deepayan Sarkar [ctb] (up to 2005),\n  EISPACK authors [ctb] (src/rs.f),\n  Siem Heisterkamp [ctb] (Author fixed sigma),\n  Bert Van Willigen [ctb] (Programmer fixed sigma),\n  R-core [aut, cre]",
         "Maintainer": "R-core <R-core@R-project.org>",
         "Repository": "CRAN",
-        "Date/Publication": "2019-08-01 06:04:26 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-08-02 13:40:27 UTC; unix"
+        "Date/Publication": "2019-05-12 08:04:29 UTC",
+        "Built": "R 3.6.1; x86_64-apple-darwin15.6.0; 2019-07-06 02:02:30 UTC; unix"
       }
     },
     "pillar": {
@@ -1030,7 +1030,7 @@
       "description": {
         "Package": "pkgconfig",
         "Title": "Private Configuration for 'R' Packages",
-        "Version": "2.0.3",
+        "Version": "2.0.2",
         "Author": "Gábor Csárdi",
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Description": "Set configuration options on a per-package basis.\n    Options set by a given package only apply to that package,\n    other packages are unaffected.",
@@ -1042,10 +1042,10 @@
         "BugReports": "https://github.com/r-lib/pkgconfig/issues",
         "Encoding": "UTF-8",
         "NeedsCompilation": "no",
-        "Packaged": "2019-09-22 08:42:40 UTC; gaborcsardi",
+        "Packaged": "2018-08-16 08:36:36 UTC; gaborcsardi",
         "Repository": "CRAN",
-        "Date/Publication": "2019-09-22 09:20:02 UTC",
-        "Built": "R 3.6.0; ; 2019-09-23 16:47:11 UTC; unix"
+        "Date/Publication": "2018-08-16 09:10:03 UTC",
+        "Built": "R 3.6.0; ; 2019-04-26 19:50:07 UTC; unix"
       }
     },
     "plogr": {
@@ -1165,8 +1165,8 @@
         "Package": "raster",
         "Type": "Package",
         "Title": "Geographic Data Analysis and Modeling",
-        "Version": "3.0-2",
-        "Date": "2019-08-22",
+        "Version": "2.9-23",
+        "Date": "2019-07-10",
         "Depends": "sp (>= 1.2-0), R (>= 3.0.0)",
         "Suggests": "rgdal (>= 0.9-1), rgeos (>= 0.3-8), ncdf4, igraph, tcltk,\nparallel, rasterVis, MASS, sf, testthat",
         "LinkingTo": "Rcpp",
@@ -1178,12 +1178,12 @@
         "BugReports": "https://github.com/rspatial/raster/issues/",
         "Authors@R": "c(\n\tperson(\"Robert J.\", \"Hijmans\", role = c(\"cre\", \"aut\"),  \n\t\t\temail = \"r.hijmans@gmail.com\", \n\t\t\tcomment = c(ORCID = \"0000-0001-5872-2872\")),\n\tperson(\"Jacob\", \"van Etten\", role = \"ctb\"),\n\tperson(\"Michael\", \"Sumner\", role = \"ctb\"),\n\tperson(\"Joe\", \"Cheng\", role = \"ctb\"),\n\tperson(\"Andrew\", \"Bevan\", role = \"ctb\"),\n\tperson(\"Roger\", \"Bivand\", role = \"ctb\"),\n\tperson(\"Lorenzo\", \"Busetto\", role = \"ctb\"),\n\tperson(\"Mort\", \"Canty\", role = \"ctb\"),\n\tperson(\"David\", \"Forrest\", role = \"ctb\"),\n\tperson(\"Aniruddha\", \"Ghosh\", role = \"ctb\"),\n\tperson(\"Duncan\", \"Golicher\", role = \"ctb\"),\n\tperson(\"Josh\", \"Gray\", role = \"ctb\"),\n\tperson(\"Jonathan A.\", \"Greenberg\", role = \"ctb\"),\n\tperson(\"Paul\", \"Hiemstra\", role = \"ctb\"),\n\tperson(\"Institute for Mathematics Applied Geosciences\", role=\"cph\"),\n\tperson(\"Charles\", \"Karney\", role = \"ctb\"),\n\tperson(\"Matteo\", \"Mattiuzzi\", role = \"ctb\"),\n\tperson(\"Steven\", \"Mosher\", role = \"ctb\"),\n\tperson(\"Jakub\", \"Nowosad\", role = \"ctb\"),\n\tperson(\"Edzer\", \"Pebesma\", role = \"ctb\"),\n\tperson(\"Oscar\", \"Perpinan Lamigueiro\", role = \"ctb\"),\n\tperson(\"Etienne B.\", \"Racine\", role = \"ctb\"),\n\tperson(\"Barry\", \"Rowlingson\", role = \"ctb\"),\n\tperson(\"Ashton\", \"Shortridge\", role = \"ctb\"),\n\tperson(\"Bill\", \"Venables\", role = \"ctb\"),\n\tperson(\"Rafael\", \"Wueest\", role = \"ctb\")\n\t)",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-08-22 17:02:34 UTC; rhijm",
+        "Packaged": "2019-07-11 05:48:54 UTC; rhijm",
         "Author": "Robert J. Hijmans [cre, aut] (<https://orcid.org/0000-0001-5872-2872>),\n  Jacob van Etten [ctb],\n  Michael Sumner [ctb],\n  Joe Cheng [ctb],\n  Andrew Bevan [ctb],\n  Roger Bivand [ctb],\n  Lorenzo Busetto [ctb],\n  Mort Canty [ctb],\n  David Forrest [ctb],\n  Aniruddha Ghosh [ctb],\n  Duncan Golicher [ctb],\n  Josh Gray [ctb],\n  Jonathan A. Greenberg [ctb],\n  Paul Hiemstra [ctb],\n  Institute for Mathematics Applied Geosciences [cph],\n  Charles Karney [ctb],\n  Matteo Mattiuzzi [ctb],\n  Steven Mosher [ctb],\n  Jakub Nowosad [ctb],\n  Edzer Pebesma [ctb],\n  Oscar Perpinan Lamigueiro [ctb],\n  Etienne B. Racine [ctb],\n  Barry Rowlingson [ctb],\n  Ashton Shortridge [ctb],\n  Bill Venables [ctb],\n  Rafael Wueest [ctb]",
         "Maintainer": "Robert J. Hijmans <r.hijmans@gmail.com>",
         "Repository": "CRAN",
-        "Date/Publication": "2019-08-22 21:50:02 UTC",
-        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-08-23 13:01:42 UTC; unix"
+        "Date/Publication": "2019-07-11 13:43:08 UTC",
+        "Built": "R 3.6.0; x86_64-apple-darwin15.6.0; 2019-07-12 12:20:15 UTC; unix"
       }
     },
     "reshape2": {
@@ -1708,9 +1708,6 @@
     }
   },
   "files": {
-    ".Rapp.history": {
-      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
-    },
     "CountySamplingData.csv": {
       "checksum": "82d97fa5cddb8e837b5c7eca2fe71ea9"
     },
@@ -1719,6 +1716,9 @@
     },
     "gadm36_USA_2_sp.rds": {
       "checksum": "891532123b2a793346897299d10b9879"
+    },
+    "LICENSE.md": {
+      "checksum": "2b08d829ad217994070cd42952dd2975"
     },
     "packrat/desc/assertthat": {
       "checksum": "5546908c8abf7dc750e9b59d246d8082"
@@ -1748,7 +1748,7 @@
       "checksum": "71db8026fd5079348d2e23d2fa8f72c2"
     },
     "packrat/desc/digest": {
-      "checksum": "7e27c89876fd132a08e6d4dc8a404f71"
+      "checksum": "e896332f85d5311017ecd5c2619738af"
     },
     "packrat/desc/dplyr": {
       "checksum": "8e4886f38959f4f32bb2ad4b9d95eef5"
@@ -1757,7 +1757,7 @@
       "checksum": "39529db8a166cfefb3f3e8f33cdc09f1"
     },
     "packrat/desc/ellipsis": {
-      "checksum": "d7425efc96e9dfb7bdc9dd14bde31e1f"
+      "checksum": "66400516aee7c4909bf72a9346145c0f"
     },
     "packrat/desc/fansi": {
       "checksum": "2427ef35a94907e5a105a051c0067e4f"
@@ -1814,7 +1814,7 @@
       "checksum": "441420afb0e8d7c45b38eda959b53377"
     },
     "packrat/desc/mgcv": {
-      "checksum": "f74a0a73586ffcb27cb1a957626a38cc"
+      "checksum": "7ee7f59e5d460327942db34995c369a4"
     },
     "packrat/desc/mime": {
       "checksum": "0b4c98a747ec0b212cfb46408cb55d7e"
@@ -1823,13 +1823,13 @@
       "checksum": "dd3e5dab6a3aaf7d00317e87591c3166"
     },
     "packrat/desc/nlme": {
-      "checksum": "02db2085e6ccbaa35072b6b41edd4a84"
+      "checksum": "6ccf48f5fe01820abc89cc312dd84eea"
     },
     "packrat/desc/pillar": {
       "checksum": "3f46744b8896c36b848c783cd87e47ab"
     },
     "packrat/desc/pkgconfig": {
-      "checksum": "bfe35146671bfb17669c2a8da6ebeb3a"
+      "checksum": "0a5f8623b728e2c207d68432f194c634"
     },
     "packrat/desc/plogr": {
       "checksum": "1fd0ddc59cc7c926c48c1af7ee4770e5"
@@ -1847,7 +1847,7 @@
       "checksum": "e8446ad106baae970814c9755f41ff22"
     },
     "packrat/desc/raster": {
-      "checksum": "60e6332270572293f5d293f39ddb1c84"
+      "checksum": "893c90ca384452208817b2f505e7731a"
     },
     "packrat/desc/RColorBrewer": {
       "checksum": "e921a2b48a3466edd651f0b78d645fdc"
@@ -1913,7 +1913,7 @@
       "checksum": "42e12e4cc19c4759dca5c1d9df2df8d7"
     },
     "packrat/packrat.lock": {
-      "checksum": "e0b1c0e568b57e48601df46b4f3aae12"
+      "checksum": "468e2c7ca0291ee5fa29d013dd13bae7"
     },
     "README.md": {
       "checksum": "6eb72dd18580287f5274aaf58bd58b23"
