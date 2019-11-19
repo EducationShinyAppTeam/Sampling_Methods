@@ -180,7 +180,7 @@ shinyServer(function(input, output, session) {
     sendSweetAlert(
       session = session,
       title = "Instructions:",
-      text = "Click on the various sampling methods at the top of the page on the 'Explore' tab for a more in-depth look at these sampling methods",
+      text = "This app explores the differences between the four most commonly used sampling methods: Simple Random Sampling, Stratified Sampling, Cluster Sampling, and Systematic Sampling.",
       type = NULL
     )
   })

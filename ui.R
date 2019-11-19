@@ -61,17 +61,19 @@ ui <- dashboardPage(
       tabItem(tabName = "prereq",
               h3(strong("Background: Various Sampling Methods")),
               br(),
-              h4(tags$li("Sampling is a process used in statistical analysis in which a set of data is selected from a larger population by using a 
+              tags$ul(
+                h4(tags$li("Sampling is a process used in statistical analysis in which a set of data is selected from a larger population by using a 
                          predefined selection method in order to capture information about the population as a whole.")),
-              h4(tags$li("Usually, the population is too large to gather data about each member of the population, because this can potentially be
+                h4(tags$li("Usually, the population is too large to gather data about each member of the population, because this can potentially be
                          both very time consuming and expensive. This is the main reason to conduct a sample, because in theory the sample is an 
                          accurate representation of the total population.")),
-              h4(tags$li("Random sampling is important, because an unbiased representation of the total population is desired in order to provide the most
+                h4(tags$li("Random sampling is important, because an unbiased representation of the total population is desired in order to provide the most
                          accurate representation of the population as a whole. In an unbiased sample, the mean of the sampling distribution is equal to the 
                          population parameter.")),
-              h4(tags$li("However, there are different methods for carrying out a random sample. Which method to use is often determined by research goals, cost,
+                h4(tags$li("However, there are different methods for carrying out a random sample. Which method to use is often determined by research goals, cost,
                          and effectivenes in the given situation. The four main types of random sampling are Simple Random Sampling, Stratified Random Sampling,
-                         Cluster Random Sampling, and Systematic Random Sampling")),
+                         Cluster Random Sampling, and Systematic Random Sampling"))
+              ),
               div(style = "text-align: center",
                   bsButton("go2","G O !",icon("bolt"),style = "danger",size = "large",class = "circle grow"))
               ),
