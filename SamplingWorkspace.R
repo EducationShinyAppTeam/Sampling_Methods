@@ -27,11 +27,10 @@ dataf.sub <- dataf[dataf$State != "AK" & dataf$State != "HI", ]
 dataf.sub$FIPS <- as.numeric(dataf.sub$FIPS)
 
 #dataf.sub
-dataf.sub$Median.Household.Income <- gsub(",",
+dataf.sub$Median.Household.Income <- as.numeric(gsub(",",
                                           "",
-                                          dataf$Median.Household.Income )
+                                          dataf$Median.Household.Income ))
 
-dataf.sub$Median.Household.Income <- as.numeric(dataf$Median.Household.Income)
 meanHI <- mean(dataf.sub$Median.Household.Income)
 
 round(meanHI, 
@@ -40,7 +39,7 @@ round(meanHI,
 dataf.sub$FIPS <- as.numeric(dataf.sub$FIPS)
 
 
-# #Reading in the shapefile
+#Reading in the shapefile
 counties <- readOGR(dsn = "UScounties")
 counties$FIPS <- as.numeric(as.character(counties$FIPS))
 counties.sub <- counties[(counties$STATE_NAME != "Alaska" & counties$STATE_NAME != "Hawaii"), ]
@@ -60,7 +59,7 @@ combined.data <- subset(combined.data,
                                     Area.Name))
 
 means <- replicate(100, 
-                   mean(sample(final.data$Median.Household.Income, 50))
+                   mean(sample(combined.data$Median.Household.Income, 50))
                    )
 
 # Forming Histogram of results 
@@ -125,11 +124,11 @@ north.East <- c("Maryland","Delaware",
 
 ##Subset main data table of counties to sub sections 
 
-counties.West <- counties.ordered[counties.ordered$STATE_NAME %in% nospecific.West,] 
-counties.southWest <- counties.ordered[counties.ordered$STATE_NAME %in% south.West, ] 
-counties.midWest <- counties.ordered[counties.ordered$STATE_NAME %in% mid.West , ]
-counties.southEast <- counties.ordered[counties.ordered$STATE_NAME %in% south.East, ] 
-counties.northEast <- counties.ordered[counties.ordered$STATE_NAME %in% north.East, ]
+counties.West <- combined.data[combined.data$STATE_NAME %in% nospecific.West,] 
+counties.southWest <- combined.data[combined.data$STATE_NAME %in% south.West, ] 
+counties.midWest <- combined.data[combined.data$STATE_NAME %in% mid.West , ]
+counties.southEast <- combined.data[combined.data$STATE_NAME %in% south.East, ] 
+counties.northEast <- combined.data[combined.data$STATE_NAME %in% north.East, ]
 
 #Preparing data for plot
 missingCounty <- data.frame("Shannon",
@@ -157,20 +156,21 @@ combined.data <- combined.data[order(combined.data$STATE_NAME),]
 
 combined.data$Square_Kilometers <- round(area(counties.ordered)/1000000,
                                          digits = 2)
-combined.data$Population <- gsub(",", 
+combined.data$Population <- as.numeric(gsub(",", 
                                  "",
-                                 combined.data$Population)
+                                 combined.data$Population))
 
-combined.data$Population <- as.numeric(combined.data$Population)
 
 combined.data <- transform(combined.data,
                            Pop.Per.Square.Kilometer = round(Population/Square_Kilometers,
                                                             digits = 2))
 
+#Since columns ar binded
 counties.ordered@data <- bind_cols(counties.ordered@data, 
                                    combined.data)
+  
 counties.ordered@data <- subset(counties.ordered@data, 
-                                select = -c(STATE_NAME1))
+                                select = -c( STATE_NAME...2))
 counties.ordered@data
 nrow(counties.ordered@data)
 
@@ -205,14 +205,14 @@ counties.UR3 <- counties.ordered[counties.ordered$Pop.Per.Square.Kilometer > 31 
 
 #mean calculation 
 
-mean(counties.UR1$Unemployment.Rate)
-mean(counties.UR2$Unemployment.Rate)
-mean(counties.UR3$Unemployment.Rate)
-mean(counties.northEast$Unemployment.Rate)
-mean(counties.southEast$Unemployment.Rate)
-mean(counties.southWest$Unemployment.Rate)
-mean(counties.West$Unemployment.Rate)
-mean(counties.midWest$Unemployment.Rate)
+mean(as.numeric(counties.UR1$Unemployment.Rate))
+mean(as.numeric(counties.UR2$Unemployment.Rate))
+mean(as.numeric(counties.UR3$Unemployment.Rate))
+mean(as.numeric(counties.northEast$Unemployment.Rate))
+mean(as.numeric(counties.southEast$Unemployment.Rate))
+mean(as.numeric(counties.southWest$Unemployment.Rate))
+mean(as.numeric(counties.West$Unemployment.Rate))
+mean(as.numeric(counties.midWest$Unemployment.Rate))
 
 
 counties.ordered$Poverty.Pct <- as.numeric(counties.ordered$Poverty.Pct)
@@ -220,9 +220,9 @@ counties.ordered$Unemployment.Rate <- as.numeric(counties.ordered$Unemployment.R
 counties.ordered$Death.Rate <- as.numeric(counties.ordered$Death.Rate)
 
 #Boxplot results from above calculation 
-boxplot(counties.UR1$Unemployment.Rate, 
-        counties.UR2$Unemployment.Rate, 
-        counties.UR3$Unemployment.Rate, 
+boxplot(as.numeric(counties.UR1$Unemployment.Rate), 
+        as.numeric(counties.UR2$Unemployment.Rate), 
+        as.numeric(counties.UR3$Unemployment.Rate), 
         ylim = c(1,
                  7.5), 
         ylab = "Unemployment Rate", 
@@ -236,11 +236,11 @@ boxplot(counties.UR1$Unemployment.Rate,
         notch = TRUE, 
         outline = FALSE)
 
-boxplot(counties.northEast$Unemployment.Rate, 
-        counties.southEast$Unemployment.Rate, 
-        counties.southWest$Unemployment.Rate, 
-        counties.West$Unemployment.Rate, 
-        counties.midWest$Unemployment.Rate, 
+boxplot(as.numeric(counties.northEast$Unemployment.Rate), 
+        as.numeric(counties.southEast$Unemployment.Rate), 
+        as.numeric(counties.southWest$Unemployment.Rate), 
+        as.numeric(counties.West$Unemployment.Rate), 
+        as.numeric(counties.midWest$Unemployment.Rate), 
         ylim = c(1,
                  7.5), 
         horizontal = TRUE)   
@@ -249,13 +249,13 @@ randomTest <- sample(1:1026,
                      100)
 
 #Subletting counties related to specified states 
-counties.AL <- counties.ordered[(counties.ordered$STATE_NAME == "Alabama"),]
-counties.FL <- counties.ordered[(counties.ordered$STATE_NAME == "Florida"),]
+counties.AL <- combined.data[(combined.data$STATE_NAME == "Alabama"),]
+counties.FL <- combined.data[(combined.data$STATE_NAME == "Florida"),]
 
 #ploting abbove results
 plot(counties.FL)
-mean(counties.FL$Poverty.Pct)
-mean(counties.AL$Poverty.Pct)
+mean(as.numeric(counties.FL$Poverty.Pct))
+mean(as.numeric(counties.AL$Poverty.Pct))
 class(counties.ordered@data$STATE_NAME)
 counties.ordered@data
 
@@ -303,7 +303,7 @@ b.states <- c("Washington","Nevada",
               "Louisiana","Georgia",
               "Michigan","Kansas",
               "Kentucky","Vermont",
-              "Iowa","Maryland","Connecticut",)
+              "Iowa","Maryland","Connecticut")
 
 y.states <- c("Oregon","Utah",
              "South Dakota","Texas",
@@ -326,10 +326,10 @@ g.states <- c("Idaho","Nebraska",
              "West Virginia","Maine")
 
 ##Forming determinant variabels
-states.blue <- counties.ordered[counties.ordered$STATE_NAME %in% b.states, ]
-states.yellow <- counties.ordered[counties.ordered$STATE_NAME %in% y.states, ]
-states.orange <- counties.ordered[counties.ordered$STATE_NAME %in% o.states, ]
-states.green <- counties.ordered[counties.ordered$STATE_NAME %in% g.states, ]
+states.blue <- combined.data[combined.data$STATE_NAME %in% b.states, ]
+states.yellow <- combined.data[combined.data$STATE_NAME %in% y.states, ]
+states.orange <- combined.data[combined.data$STATE_NAME %in% o.states, ]
+states.green <- combined.data[combined.data$STATE_NAME %in% g.states, ]
 
 #Getting lon/lat data into my the map data
 geoCounty2 <- (geoCounty %>% mutate_all(~gsub(" County| Parish", "",.)))
@@ -382,22 +382,30 @@ geoCounty3 <- data.frame(a,b,c,d,
 
 names(geoCounty3) <- c('NAME', 
                        'lon', 
-                       'lat', '
-                       FIPS')
+                       'lat', 
+                       'FIPS')
 
 #manipulation of previous data frame 
 geoCounty2$lon <- as.numeric(geoCounty2$lon)
 geoCounty2$lat <- as.numeric(geoCounty2$lat)
 geoCounty2$FIPS <- as.numeric(geoCounty2$FIPS)
+
+geoCounty3$lon <- as.numeric(geoCounty3$lon)
+geoCounty3$lat <- as.numeric(geoCounty3$lat)
 geoCounty3$FIPS <- as.numeric(geoCounty3$FIPS)
+
+
 
 geoCounty4 <- bind_rows(geoCounty2, geoCounty3)
 geoCounty4 <- geoCounty4[order(geoCounty4$FIPS),]
 geoCounty4 <- subset(geoCounty4, select = -c(NAME, FIPS))
 
 
-counties.ordered@data <- bind_cols(counties.ordered@data, geoCounty4)
-counties.position <- counties.ordered[order(-counties.ordered$lat, counties.ordered$lon),]
+counties.ordered@data <- bind_cols(counties.ordered@data,
+                                   geoCounty4)
+
+counties.position <- counties.ordered[order(-counties.ordered$lat, 
+                                            counties.ordered$lon),]
 
 #Printing results 
 
